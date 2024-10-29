@@ -340,7 +340,9 @@ def launch_setup(context, *args, **kwargs):
         "force_torque_sensor_broadcaster",
         "ur_configuration_controller",
     ]
-    controllers_inactive = ["forward_position_controller"]
+    controllers_inactive = [
+        "forward_position_controller",
+        "forward_velocity_controller"]
 
     controller_spawners = [controller_spawner(controllers_active)] + [
         controller_spawner(controllers_inactive, active=False)
